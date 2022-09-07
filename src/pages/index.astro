@@ -1,0 +1,32 @@
+---
+import Baseof from '../layouts/Baseof.astro';
+import BigSp1 from '../components/Big_sp1.astro';
+// import Mod1 from '../components/Mod_1.astro';
+import BigSp2 from '../components/Big_sp2.astro';
+import HomeReasons from '../components/Home_reasons.astro';
+import BigSp3 from '../components/Big_sp3.astro';
+//import HomePeopleImg from '../components/Home_people_img.astro';
+import HomeFactory from '../components/Home_factory.astro';
+import HomeClient from '../components/Home_client.astro';
+import BigSp4 from '../components/Big_sp4.astro';
+// import HomeFactory from '../components/Home_factory.astro';
+import HomeAgent from '../components/Home_agent.astro';
+import HomeBenefit from '../components/Home_benefit.astro';
+import SlideshowMain from '../components/Slideshow_main.jsx';
+
+
+---
+
+<Baseof>
+	<BigSp1 />
+	<SlideshowMain client:load />
+	<!-- <Mod1 /> -->
+	<BigSp2 />
+	<HomeReasons />
+	<BigSp3 />
+	<HomeFactory />
+	<BigSp4 />
+	<HomeClient />
+	<HomeAgent />
+	<HomeBenefit />
+</Baseof>

@@ -1,0 +1,12 @@
+---
+//import { Image } from '@astrojs/image/components';
+import { Picture } from '@astrojs/image/components';
+const {ImgUrl, ImgAlt} = Astro.props;
+---
+
+<div class="
+    border-4 lg:border-8 border-white bg-gray-300 shadow-lg
+    w-full aspect-square overflow-hidden
+">
+    <Picture class="w-full h-full object-cover" src={ImgUrl} widths={[150, 250, 360]} aspectRatio="1:1" alt={ImgAlt} sizes="(min-width: 1200px) 100vw, 360px" format="webp"/>
+</div>

@@ -1,0 +1,25 @@
+---
+import Baseof from '../layouts/Baseof.astro';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+const videos = [
+    {
+        id: "ssYNSKAaOXE",
+        poster: "https://res.cloudinary.com/khongdangky/image/upload/v1662430164/viethan/Frame_102_c7essv.jpg"
+    },
+    {
+        id: "m1MsfNtgZ5c",
+        poster: "https://res.cloudinary.com/khongdangky/image/upload/v1662430487/viethan/Frame_103_qtigjp.jpg"
+    },
+]
+---
+<Baseof>
+<section class="bg-white p-4 md:p-8 lg:p-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {
+            videos.map((item) => (
+                <YouTube id={item.id} poster={item.poster} />
+            ))
+        }
+    </div>
+</section>
+</Baseof>

@@ -1,0 +1,73 @@
+---
+import BigSingleImage from "./Big_single_image.astro";
+import TemXophoi from "./Tem_xophoi.astro";
+
+const ImgList = [
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662183741/viethan/01_kx9pht.jpg",
+    alt: "image",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662183740/viethan/02_vjbwco.jpg",
+    alt: "image",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662183741/viethan/03_j76p3g.jpg",
+    alt: "image",
+  },
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662183740/viethan/04_cdhlbf.jpg",
+    alt: "image",
+  },
+];
+
+---
+
+<section class="sp1 w-full aspect-auto lg:aspect-[2/1] grid grid-cols-1 sm:grid-cols-5 px-4 py-8 sm:p-0">
+  <div class="w-full h-full sm:col-span-2 flex flex-col items-center justify-center">
+    <div
+      class="border-2 border-black sm:border-white rounded-full text-xs lg:text-sm font-bold uppercase sm:text-white px-2 py-1 mb-4"
+    >
+      sản phẩm tiêu biểu
+    </div>
+    <TemXophoi />
+    <div class="sm:text-white font-bold sm:font-normal text-lg md:text-2xl lg:text-3xl text-center uppercase lg:leading-snug">
+      xốp hơi chống sốc,<br />chống trầy xước
+    </div>
+  </div>
+
+  <div class="p-0 pt-4 sm:p-4 sm:pl-0 lg:p-12 lg:pl-0 sm:col-span-3 grid grid-cols-2 gap-2 lg:gap-4">
+    {
+      ImgList.map((item) => (
+        <BigSingleImage ImgUrl={item.image} ImgAlt={item.alt} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+/*   section.sp1 {
+    background: rgb(169, 20, 221);
+    background: linear-gradient(
+      115deg,
+      rgba(169, 20, 221, 1) 0%,
+      rgba(169, 20, 221, 1) 55%,
+      rgba(255, 255, 255, 1) 55%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  } */
+  section.sp1 {
+    background: rgb(169, 20, 221);
+    background: linear-gradient(
+      115deg,
+      rgba(59,130,246, 1) 0%,
+      rgba(96,165,250, 1) 55%,
+      rgba(219,234,254, 1) 55%,
+      rgba(219,234,254, 1) 100%
+    );
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import Baseof from "../layouts/Baseof.astro";
+// import { Image } from "@astrojs/image/components";
+import { Picture } from '@astrojs/image/components';
+const imageUrl =
+  "https://res.cloudinary.com/khongdangky/image/upload/viethan/sanxuat_u7dpxt.jpg";
+import Vs100 from "../components/Vs100.astro";
+
+const ls = [
+  { text: "Công ty đã có kinh nghiệm nhiều năm trong lĩnh vực sản xuất." },
+  { text: "Máy móc hiện đại chuẩn quốc tế, công nghệ tiên tiến Hàn Quốc." },
+  { text: "Sản phẩm đa dạng phù hợp nhiều nhu cầu sử dụng khác nhau." },
+  { text: "Gia công đơn hàng nhanh chóng đảm bảo tiến độ cho các dự án lớn." },
+  { text: "Giá bán cạnh tranh. Giao hàng nhanh chóng. Thanh toán linh hoạt." },
+  { text: "Nhân viên thân thiện, chuyên nghiệp, tư vấn nhiệt tình, chu đáo." },
+];
+
+const nm = [
+    {
+        "image": "https://res.cloudinary.com/khongdangky/image/upload/v1662297845/viethan/mm1_ot5yb4.jpg",
+        "alt": "máy móc, phân xưởng sản xuất của công ty việt hàn"
+    },
+    {
+        "image": "https://res.cloudinary.com/khongdangky/image/upload/v1662297845/viethan/mm2_qupkq4.jpg",
+        "alt": "máy móc, phân xưởng sản xuất của công ty việt hàn"
+    },
+    {
+        "image": "https://res.cloudinary.com/khongdangky/image/upload/v1662298364/viethan/mm4_bsuwck.jpg",
+        "alt": "máy móc, phân xưởng sản xuất của công ty việt hàn"
+    },
+    {
+        "image": "https://res.cloudinary.com/khongdangky/image/upload/v1662298390/viethan/mm3_b0u8g9.jpg",
+        "alt": "máy móc, phân xưởng sản xuất của công ty việt hàn"
+    },
+]
+---
+
+<Baseof>
+  <section class="p-8 md:p-12 bg-white">
+    <div class="max-w-screen-md mx-auto text-center">
+      <p class="my-8 text:lg md:text-xl">
+        Thương hiệu VietHan ra đời dưới sự bảo trợ của Công ty TNHH MTV Đầu tư
+        Tùng Lâm Hòa Bình, nhằm đáp ứng nhu cầu ngày càng cao của thị trường với
+        vật liệu đóng gói hàng hóa phục vụ logistic, vật liệu cách âm, cách
+        nhiệt trong nội thất, xây dựng. Chúng tôi chuyên cung cấp màng Xốp Hơi,
+        Xốp Foam PE, Xốp PE tráng bạc, nilon, Tấm cách nhiệt chất lượng cao, giá
+        cả cạnh tranh.
+      </p>
+      <Vs100 />
+      <div class="my-8">
+      <Picture
+        src={imageUrl}
+        widths={[400,600,900,1200]}
+        aspectRatio={3 / 2}
+        alt="viethan production"
+        sizes="(min-width: 1200px) 100vw, 1200px"
+        format="webp"
+      />
+        </div>
+      <h2 class="font-bold text-2xl">
+        6 lý do lựa chọn sản phẩm của chúng tôi
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+        {
+          ls.map((item) => (
+            <div class="bg-blue-600 text-white text-base border border-black p-4">
+              {item.text}
+            </div>
+          ))
+        }
+      </div>
+      <div class="mt-4 grid grid-cols-2 gap-2 sm:gap-4">
+          {nm.map((item) => (
+              <div class="w-full aspect-square border-2 border-blue-400">
+                  <Picture src={item.image} widths={[150,300,500]} aspectRatio="1:1" sizes="(min-width: 1200px) 100vw, 500px" format="webp" />
+              </div>
+          ))}
+      </div>
+    </div>
+  </section>
+</Baseof>

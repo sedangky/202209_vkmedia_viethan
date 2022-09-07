@@ -1,0 +1,63 @@
+---
+import PrdSingle from "./Prd_single.astro";
+const PrdList = [
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662301175/viethan/xh1_juhfcc.jpg",
+    alt: "SP1",
+    code: "XH 01"
+  },
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662301175/viethan/xh2_uxicsx.jpg",
+    alt: "SP2",
+    code: "XH 02"
+  },
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662301175/viethan/xh3_x2sb0y.jpg",
+    alt: "SP3",
+    code: "XH 03"
+  },
+  {
+    image:
+      "https://res.cloudinary.com/khongdangky/image/upload/v1662301175/viethan/xh4_btpcsa.jpg",
+    alt: "SP4",
+    code: "XH 04"
+  }
+];
+---
+
+<section class="bg-blue-300 p-4 md:p-12">
+  <div class="flex flex-col lg:flex-row items-center justify-between mb-4">
+    <h2
+      id="xophoi"
+      class="striped px-4 py-2 mb-4 rounded-full uppercase border-2 border-black font-bold text-sm md:text-lg lg:text-xl text-center w-fit mx-auto lg:mx-0"
+    >
+      xốp nổ, xốp hơi
+    </h2>
+    <p class="text-sm text-center lg:text-left lg:max-w-md xl:max-w-2xl">
+      Cuộn màng nhựa có các hạt chứa không khí đường kính 10mm rải đều trên bề mặt. 
+      Thường dùng bọc lót, đóng gói các sản phẩm dễ vỡ như linh kiện điện tử, gốm, sứ, thủy tinh,...
+    </p>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+    {
+      PrdList.map((prd) => (
+        <PrdSingle Img={prd.image} Alt={prd.alt} Code={prd.code} />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .striped {
+    background: repeating-linear-gradient(
+      -60deg,
+      #dbeafe,
+      #dbeafe 20px,
+      #ffffff 20px,
+      #ffffff 40px
+    );
+  }
+</style>

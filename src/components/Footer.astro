@@ -1,0 +1,82 @@
+---
+import FooterLogo from "./Footer_logo.astro";
+import PMap from "../components/P_map.jsx";
+const today = new Date();
+const prd = [
+  {
+    name: "xốp hơi, xốp nổ",
+    linkto: "/products#xophoi",
+  },
+  {
+    name: "xốp PE foam",
+    linkto: "/products#xoppe",
+  },
+  {
+    name: "xốp PE tráng bạc",
+    linkto: "/products#pebac",
+  },
+  {
+    name: "tấm cách nhiệt",
+    linkto: "/products#tamcn",
+  },
+];
+---
+
+<footer class="p-8 relative overflow-hidden">
+  <section
+    class="grid grid-col-1 sm:grid-cols-2 place-items-stretch text-white gap-4"
+  >
+    <div class="grid grid-col-1 sm:grid-cols-2 place-items-stretch gap-4">
+      <div
+        class="sm:border-r border-white border-dashed flex flex-col justify-end items-center sm:items-start text-center sm:text-left"
+      >
+        <FooterLogo />
+        <div>Công ty TNHH MTV Đầu tư<br />Tùng Lâm Hòa Bình</div>
+        
+      </div>
+      <div
+        class="sm:border-r border-white border-dashed flex flex-col justify-end text-center sm:text-left"
+      >
+        <h3 class="font-bold text-lg sm:text-base xl:text-2xl mb-4">Danh mục sản phẩm</h3>
+        <ul class="lg:list-disc lg:list-inside">
+          {
+            prd.map((item) => (
+              <li>
+                <a href={item.linkto}>{item.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="w-full h-full aspect-[4/3] rounded-xl overflow-hidden">
+      <PMap client:load />
+    </div>
+  </section>
+
+  <section
+    class="mt-12 px-2 text-center text-xs"
+  >
+    &copy; {today.getFullYear()} VietHan. <br class="sm:hidden"/>All rights reserved.
+    
+  </section>
+  
+</footer>
+
+<style>
+  footer {
+    /* hardcoding, need a way out */
+    background-image: linear-gradient(
+        115deg,
+        rgba(220,38,38,0.85) 0%,
+        rgba(220,38,38,0.85) 70%,
+        rgba(30,64,175,1) 70%,
+        rgba(30,64,175,1) 100%
+      ),
+      url("https://res.cloudinary.com/khongdangky/image/upload/c_scale,w_1200/f_auto/v1661853696/viethan/f44_g03jja.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>

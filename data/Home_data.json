@@ -1,0 +1,27 @@
+{
+    "nav" : [
+        { "name": "giới thiệu", "to": "/intro" },
+        { "name": "sản phẩm", "to": "/products" },
+        { "name": "hỗ trợ kỹ thuật", "to": "/support" },
+        { "name": "tuyển dụng", "to": "/recruitment" },
+        { "name": "liên hệ", "to": "/contact" }
+    ],
+    
+    "reasons": [
+        { 
+            "number": "01", 
+            "title": "sản phẩm đa dạng", 
+            "body":"Sản phẩm của chúng tôi cung cấp đa dạng về chủng loại với đủ các độ dày và nhiều màu sắc khác nhau đáp ứng mọi nhu cầu của khách hàng." 
+        },
+       { 
+            "number": "02", 
+            "title": "Chất lượng ổn định", 
+            "body":"Với mục tiêu tạo ra các sản phẩm có giá trị chuẩn Quốc tế, chúng tôi luôn chú trọng vào việc sản xuất những sản phẩm có tiêu chuẩn chất lượng cao và ổn định." 
+        },
+        { 
+            "number": "03", 
+            "title": "Giá cả cạnh tranh", 
+            "body":"Chúng tôi chịu trách nhiệm khi đưa ra giá thành cho mỗi sản phẩm. Chúng tôi tin giá thành là 1 yếu tố quan trọng đối với sự bền vững trong kinh doanh." 
+        }
+    ]
+}

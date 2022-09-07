@@ -1,0 +1,22 @@
+---
+import { Image } from '@astrojs/image/components';
+const imageUrl = 'https://res.cloudinary.com/khongdangky/image/upload/v1662296533/viethan/nhaxuong_sezfob.jpg';
+
+---
+
+<section class="bg-slate-500 w-full aspect-square sm:aspect-[2.5/1] relative">
+    <Image class="w-full h-full object-cover" src={imageUrl} width={1280} height={800} aspectRatio="2:1" format="webp" alt="viet han factory" />
+</section>
+
+<style>
+    section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right:0;
+        background: url(/bg_p3.png) repeat;
+        z-index: 2;
+    }
+</style>
