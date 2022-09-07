@@ -1,5 +1,5 @@
 ---
-import FooterLogo from "./Footer_logo.astro";
+import logo_viethan from "../imgs/logo_viethan.svg";
 import PMap from "../components/P_map.jsx";
 const today = new Date();
 const prd = [
@@ -30,7 +30,9 @@ const prd = [
       <div
         class="sm:border-r border-white border-dashed flex flex-col justify-end items-center sm:items-start text-center sm:text-left"
       >
-        <FooterLogo />
+        <div class="w-3/4 mx-auto sm:mx-0 mb-4 flex justify-center sm:justify-start items-center">
+          <img src={logo_viethan} alt="logo viet han" />
+        </div>
         <div>Công ty TNHH MTV Đầu tư<br />Tùng Lâm Hòa Bình</div>
         
       </div>
