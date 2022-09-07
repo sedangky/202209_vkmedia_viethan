@@ -5,25 +5,29 @@ const PrdList = [
     image:
       "https://res.cloudinary.com/khongdangky/image/upload/v1662384465/viethan/tb1_y6o9pu.jpg",
     alt: "SP1",
-    code: "TB 01"
+    code: "TB 01",
+    modal_id: "TB01"
   },
   {
     image:
       "https://res.cloudinary.com/khongdangky/image/upload/v1662384466/viethan/tb2_zutnek.jpg",
     alt: "SP2",
-    code: "TB 02"
+    code: "TB 02",
+    modal_id: "TB02"
   },
   {
     image:
       "https://res.cloudinary.com/khongdangky/image/upload/v1662384464/viethan/tb3_zfyui9.jpg",
     alt: "SP3",
-    code: "TB 03"
+    code: "TB 03",
+    modal_id: "TB03"
   },
   {
     image:
       "https://res.cloudinary.com/khongdangky/image/upload/v1662384464/viethan/tb4_csfgdw.jpg",
     alt: "SP4",
-    code: "TB 04"
+    code: "TB 04",
+    modal_id: "TB04"
   }
 ];
 ---
@@ -47,7 +51,7 @@ const PrdList = [
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
       {
         PrdList.map((prd) => (
-          <PrdSingle Img={prd.image} Alt={prd.alt} Code={prd.code} />
+          <PrdSingle Img={prd.image} Alt={prd.alt} Code={prd.code} ModalID={prd.modal_id} />
         ))
       }
     </div>
