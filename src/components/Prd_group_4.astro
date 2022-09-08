@@ -1,7 +1,7 @@
 ---
 import PrdGroup from "./Prd_group.astro";
 
-const prds = await Astro.glob('../product/tam-cach-nhiet/*.md');
+const prds = await Astro.glob('../pages/product/tam-cach-nhiet/*.md');
 ---
 
 <PrdGroup 
@@ -11,7 +11,7 @@ const prds = await Astro.glob('../product/tam-cach-nhiet/*.md');
 >
     <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
         {prds.map(p => (
-            <a href={p.frontmatter.slug}>
+            <a href={p.url}>
                 <div class="group flex flex-col border-4 md:border-8 border-white bg-white shadow-md hover:shadow-lg transition-all duration-500">
                     <div class="bg-gray-300 w-full aspect-square overflow-hidden">
                         <img class="w-full h-full object-cover transition-all duration-500 group-hover:scale-125" src={p.frontmatter.image_url} width="500" height="500" alt={p.frontmatter.image_alt} />
