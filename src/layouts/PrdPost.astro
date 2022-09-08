@@ -46,23 +46,18 @@ const {
 								<div class="bg-black text-white uppercase btn btn-sm"><a href="/products">back</a></div>
 							</div>
 							<h2 class="font-bold text-2xl lg:text-3xl">{title}</h2>
-							<div class="overflow-x-auto">
-								<table class="rounded-none w-full table table-auto table-zebra table-compact lg:table-normal my-4 lg:my-8 text-sm lg:text-base shadow-sm">
-									<tbody>
-										<tr>
-											<td>công dụng:</td>
-											<td>{prd_use}</td>
-										</tr>
-										<tr>
-											<td>kích thước:</td>
-											<td>{prd_size}</td>
-										</tr>
-										<tr>
-											<td>trọng lượng:</td>
-											<td>{prd_weight}</td>
-										</tr>
-									</tbody>
-								</table>
+
+
+							<div class="my-4 lg:my-8 grid grid-cols-3 shadow-lg">
+								<div class="col-span-1 bg-white/30 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">công dụng</div>
+								<div class="col-span-2 bg-white/20 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">{prd_use}</div>
+
+								<div class="col-span-1 bg-white/30 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">kích thước:</div>
+								<div class="col-span-2 bg-white/20 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">{prd_size}</div>
+
+								<div class="col-span-1 bg-white/30 p-2 lg:p-4">trọng lượng:</div>
+								<div class="col-span-2 bg-white/20 p-2 lg:p-4">{prd_weight}</div>
+
 							</div>
 						</div>
 					</div>
