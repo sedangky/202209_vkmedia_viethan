@@ -1,0 +1,25 @@
+---
+import PrdGroup from "./Prd_group.astro";
+
+const prds = await Astro.glob('../product/xop-pe/*.md');
+---
+
+<PrdGroup 
+    heading = "xốp pe foam"
+    text = "Màng xốp PE hay PE foam là vật liệu thường dùng trong công nghiệp đóng gói, lót sàn gỗ. Sản phẩm mềm, dẻo dai, chống sốc rất tốt, dễ dàng cắt thành nhiều loại kích thước phù hợp nhu cầu sử dụng."
+    sectionbg = "bg-blue-200"
+>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+        {prds.map(p => (
+            <a href={p.frontmatter.slug}>
+                <div class="group flex flex-col border-4 md:border-8 border-white bg-white shadow-md hover:shadow-lg transition-all duration-500">
+                    <div class="bg-gray-300 w-full aspect-square overflow-hidden">
+                        <img class="w-full h-full object-cover transition-all duration-500 group-hover:scale-125" src={p.frontmatter.image_url} width="500" height="500" alt={p.frontmatter.image_alt} />
+                    </div>
+                    <div class="uppercase text-center py-1 font-bold text-xs sm:text-sm">{p.frontmatter.prd_code}</div>
+                </div>
+            </a>
+    
+        ))}
+    </div>
+</PrdGroup>

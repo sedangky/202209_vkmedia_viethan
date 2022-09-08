@@ -1,0 +1,31 @@
+---
+const { heading, text, sectionbg = "bg-blue-300" } = Astro.props;
+
+---
+
+<section class={sectionbg + " p-4 md:p-12"}>
+  <div class="flex flex-col lg:flex-row items-center justify-between mb-4">
+    <h2
+      id="xophoi"
+      class="striped px-4 py-2 mb-4 rounded-full uppercase border-2 border-black font-bold text-sm md:text-lg lg:text-xl text-center w-fit mx-auto lg:mx-0"
+    >
+      {heading}
+    </h2>
+    <p class="text-sm text-center lg:text-left lg:max-w-md xl:max-w-2xl">
+      {text}
+    </p>
+  </div>
+  <slot />
+</section>
+
+<style>
+  .striped {
+    background: repeating-linear-gradient(
+      -60deg,
+      #dbeafe,
+      #dbeafe 20px,
+      #ffffff 20px,
+      #ffffff 40px
+    );
+  }
+</style>

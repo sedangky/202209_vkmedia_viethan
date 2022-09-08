@@ -1,0 +1,22 @@
+---
+export async function getStaticPaths() {
+  const prds = await Astro.glob('../product/**/*.md')
+
+  return prds.map(p => ({
+    params: { 
+      slug: p.frontmatter.slug 
+    },
+    props: {
+      p
+    },
+  }))
+}
+
+const { frontmatter, Content } = Astro.props.p
+---
+
+
+<div>
+    <Content/>
+</div>
+

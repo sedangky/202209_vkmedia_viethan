@@ -11,3 +11,21 @@ body {
 	font-family: Inter, Verdana, sans-serif;
   background-color: #ccc;
 }
+
+@layer components {
+  .md-content {
+    @apply max-w-xl mx-auto xl:my-12;
+  }
+  .md-content p, .md-content ul {
+    @apply py-2 xl:py-4;
+  }
+  .md-content h2 {
+    @apply font-bold text-xl py-4;
+  }
+  .md-content h3 {
+    @apply font-bold py-4;
+  }
+  .md-content ul {
+    @apply list-disc list-inside;
+  }
+}

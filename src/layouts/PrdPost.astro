@@ -1,0 +1,81 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../config';
+import Sticky from '../components/Sticky.astro';
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		pubDate?: string;
+		updatedDate?: string;
+		image_url?: string;
+		prd_code?:string;
+		prd_use?:string;
+		prd_size?:string;
+		prd_weight?:string;
+	};
+}
+
+const {
+	content: { title, description, image_url, prd_code, prd_use, prd_size, prd_weight },
+} = Astro.props;
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+		<div class="lg:container mx-auto p-2 md:p-4 lg:p-8 ">
+			<Header title={SITE_TITLE} />
+
+			<main>
+				<article>
+					<div class="grid grid-cols-1 sm:grid-cols-2">
+						<img class="w-full h-full object-cover" src={image_url} width="500" height="500" alt="" />
+						<div class="sm:pt-4 bg-blue-200 p-4">
+							<div class="flex justify-between">
+								<div class="font-bold text-2xl text-red-700">{prd_code}</div>
+								<div class="bg-black text-white uppercase btn btn-sm"><a href="/products">back</a></div>
+							</div>
+							<h2 class="font-bold text-2xl lg:text-3xl">{title}</h2>
+							<div class="overflow-x-auto">
+								<table class="rounded-none w-full table table-auto table-zebra table-compact lg:table-normal my-4 lg:my-8 text-sm lg:text-base shadow-sm">
+									<tbody>
+										<tr>
+											<td>công dụng:</td>
+											<td>{prd_use}</td>
+										</tr>
+										<tr>
+											<td>kích thước:</td>
+											<td>{prd_size}</td>
+										</tr>
+										<tr>
+											<td>trọng lượng:</td>
+											<td>{prd_weight}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<section class="bg-yellow-100 p-4">
+						<div class="md-content">
+							<slot />
+						</div>
+					</section>
+				</article>
+			</main>
+			
+			<Footer />
+		</div>
+		<Sticky />
+	</body>
+</html>
