@@ -1,28 +1,35 @@
 ---
 import Baseof from '../layouts/Baseof.astro';
-import BigSp1 from '../components/Big_sp1.astro';
-import BigSp2 from '../components/Big_sp2.astro';
 import HomeReasons from '../components/Home_reasons.astro';
-import BigSp3 from '../components/Big_sp3.astro';
 import HomeFactory from '../components/Home_factory.astro';
-import HomeClient from '../components/Home_client.astro';
-import BigSp4 from '../components/Big_sp4.astro';
 import HomeAgent from '../components/Home_agent.astro';
 import HomeBenefit from '../components/Home_benefit.astro';
 import SlideshowMain from '../components/Slideshow_main.jsx';
+
+import Poster from '../components/Poster.astro';
+import data from '../data/home.json';
+
+import SlideshowClient from '../components/Slideshow_client';
 
 
 ---
 
 <Baseof>
-	<BigSp1 />
+	<Poster sp={data.sp1} tem={"/tem_xophoi.svg"}/>
 	<SlideshowMain client:load />
-	<BigSp2 />
+	<Poster sp={data.sp2} tem={"/tem_pefoam.svg"} reverse={true}/>
 	<HomeReasons />
-	<BigSp3 />
+	<Poster sp={data.sp3} tem={"/tem_pefoam_b.svg"}/>
 	<HomeFactory />
-	<BigSp4 />
-	<HomeClient />
+	<Poster sp={data.sp4} tem={"/tem_cachnhiet.svg"} reverse={true}/>
+	
+	<section class="mb-4 md:bg-blue-500 pb-8">
+		<h2 class="font-bold uppercase text-xl text-center py-8">
+			khách hàng nói về chúng tôi
+		</h2>
+		<SlideshowClient client:visible />
+	</section>
+
 	<HomeAgent />
 	<HomeBenefit />
 </Baseof>

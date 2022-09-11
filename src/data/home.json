@@ -1,0 +1,94 @@
+{
+  "sp1": {
+    "name": "xốp hơi",
+    "desc": "xốp hơi chống sốc, chống xước",
+    "bg": "#60a5fa",
+    "imgs": [
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183741/viethan/01_kx9pht.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183740/viethan/02_vjbwco.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183741/viethan/03_j76p3g.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183740/viethan/04_cdhlbf.jpg",
+        "alt": "image"
+      }
+    ]
+  },
+  "sp2": {
+    "name": "xốp pe",
+    "desc": "foam cách nhiệt chống ồn, chống ẩm",
+    "bg": "#60a5fa",
+    "imgs": [
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183740/viethan/05_pp9bjo.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183740/viethan/06_daymgp.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662385555/viethan/08_ooqfpc.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662290125/viethan/07_fxrmg4.jpg",
+        "alt": "image"
+      }
+    ]
+  },
+  "sp3": {
+    "name": "xốp pe tráng bạc",
+    "desc": "pe foam tráng bạc chống xước, cách nhiệt",
+    "bg": "#60a5fa",
+    "imgs": [
+        {
+            "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662385723/viethan/tb2_ye7uaq.jpg",
+            "alt": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183741/viethan/10_u2vyxr.jpg",
+            "alt": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183742/viethan/11_ulzmc8.jpg",
+            "alt": "image"
+          },
+          {
+            "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662385724/viethan/tb4_gfhfuy.jpg",
+            "alt": "image"
+          }
+    ]
+  },
+  "sp4": {
+    "name": "tấm cách nhiệt",
+    "desc": "tấm xốp cách nhiệt chống nóng, chống ồn",
+    "bg": "#60a5fa",
+    "imgs": [
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183742/viethan/13_y335lm.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183742/viethan/14_mn3cie.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183742/viethan/15_twf38w.jpg",
+        "alt": "image"
+      },
+      {
+        "url": "https://res.cloudinary.com/khongdangky/image/upload/v1662183742/viethan/16_bo2hau.jpg",
+        "alt": "image"
+      }
+    ]
+  }
+}
