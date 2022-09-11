@@ -1,10 +1,7 @@
 ---
 import Baseof from './Baseof.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../config';
-import Sticky from '../components/Sticky.astro';
+import { Image } from '@astrojs/image/components';
+import OrderNow from '../components/Order_now.astro';
 
 export interface Props {
 	content: {
@@ -17,11 +14,12 @@ export interface Props {
 		prd_use?:string;
 		prd_size?:string;
 		prd_weight?:string;
+		more_imgs?:any;
 	};
 }
 
 const {
-	content: { title, description, image_url, prd_code, prd_use, prd_size, prd_weight },
+	content: { title, description, image_url, prd_code, prd_use, prd_size, prd_weight, more_imgs },
 } = Astro.props;
 
 
@@ -31,6 +29,7 @@ const {
 	<article>
 		<div class="grid grid-cols-1 sm:grid-cols-2">
 			<img class="w-full h-full object-cover" src={image_url} width="500" height="500" alt="" />
+			
 			<div class="sm:pt-4 bg-blue-200 p-4">
 				<div class="flex justify-between">
 					<div class="font-bold text-2xl text-red-700">{prd_code}</div>
@@ -50,8 +49,35 @@ const {
 					<div class="col-span-2 bg-white/20 p-2 lg:p-4">{prd_weight}</div>
 
 				</div>
+
+				<div class="flex items-center p-2 lg:p-4 border-2 border-red-800">
+					<p class="font-bold text-red-800 text-sm lg:text-xl mr-auto">ĐẶT HÀNG</p>
+					<OrderNow />
+				</div>
+
 			</div>
 		</div>
+
+		{more_imgs && 
+			<>
+				<section class="bg-white grid grid-cols-1 sm:grid-cols-2 p-2 gap-2">
+					<div class="grid grid-cols-2 gap-2">
+						{more_imgs.slice(0,4).map((img) => (
+							<Image class="w-full h-full object-cover" width={500} aspectRatio="1:1" format={"webp"} src={img} alt="more image product" />
+						))}
+					</div>
+					<div>
+						{more_imgs.slice(4,5).map((img) => (
+							<Image class="w-full h-full object-cover" width={500} aspectRatio="1:1" format={"webp"} src={img} alt="more image product" />
+						))}
+					</div>
+				</section>
+			
+			</>
+		
+		}
+
+
 		<section class="bg-yellow-100 p-4">
 			<div class="md-content">
 				<slot />
