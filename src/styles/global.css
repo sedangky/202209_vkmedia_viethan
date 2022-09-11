@@ -30,6 +30,6 @@ body {
   }
 
   .blog-post {
-    @apply max-w-screen-md mx-auto p-2 md:p-8 xl:p-12;
+    @apply max-w-screen-md 2xl:max-w-screen-lg mx-auto p-2 md:p-8 xl:p-12;
   }
 }

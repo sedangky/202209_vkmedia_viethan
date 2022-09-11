@@ -9,10 +9,12 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 ---
 
 <Baseof PageTitle = "tin tức việt hàn" PageDescription = "cập nhật thông tin mới nhất về các sản phẩm thương hiệu việt hàn">
+	
 	<section class="bg-blue-200 px-2 py-4 lg:px-0 lg:py-12">
-		<ul class="max-w-screen-md mx-auto">
+		
+		<ul class="max-w-screen-md mx-auto 2xl:max-w-full 2xl:grid 2xl:grid-cols-2 2xl:px-12 2xl:gap-4">
 			{posts.map((post) => (
-				<li class="relative bg-white p-4 rounded-md overflow-hidden my-2">
+				<li class="relative bg-white p-4 overflow-hidden my-2 shadow-md">
 					<time class="absolute top-0 right-4 bg-blue-500 text-sm text-white z-10 py-1 px-3" datetime={post.frontmatter.date}>
 						{new Date(post.frontmatter.date).toLocaleDateString('vi-vn', {
 							year: 'numeric',
@@ -22,7 +24,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 					</time>
 
 					<a href={post.url} class="flex flex-col">
-						<div class="aspect-auto lg:aspect-[3/1] overflow-hidden">
+						<div class="aspect-square sm:aspect-auto lg:aspect-[3/1] 2xl:aspect-video overflow-hidden">
 							<Image class="w-full h-full object-cover" src={post.frontmatter.post_image} width={800} aspectRatio="16:9" format={"webp"} alt={post.frontmatter.description} />
 						</div>
 						<h2 class="font-bold text-lg xl:text-2xl leading-tight mt-2">{post.frontmatter.title}</h2>
