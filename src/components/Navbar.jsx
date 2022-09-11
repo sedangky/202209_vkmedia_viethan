@@ -21,8 +21,8 @@ export default function Navbar({}) {
       linkto: "/video",
     },
     {
-      name: "tuyển dụng",
-      linkto: "/recruitment",
+      name: "tin tức",
+      linkto: "/blog",
     },
     {
       name: "liên hệ",

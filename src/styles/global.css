@@ -16,16 +16,20 @@ body {
   .md-content {
     @apply max-w-xl mx-auto xl:my-12;
   }
-  .md-content p, .md-content ul {
+  .md-content p, .md-content ul, .blog-post p, .blog-post ul {
     @apply py-2 xl:py-4;
   }
-  .md-content h2 {
+  .md-content h2, .blog-post h2 {
     @apply font-bold text-xl py-4;
   }
-  .md-content h3 {
+  .md-content h3, .blog-post h3 {
     @apply font-bold py-4;
   }
-  .md-content ul {
+  .md-content ul, .blog-post ul {
     @apply list-disc list-inside;
+  }
+
+  .blog-post {
+    @apply max-w-screen-md mx-auto p-2 md:p-8 xl:p-12;
   }
 }

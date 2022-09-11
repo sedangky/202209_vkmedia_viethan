@@ -1,29 +1,33 @@
 ---
 import Baseof from '../layouts/Baseof.astro';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import { Image } from '@astrojs/image/components';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
 );
 ---
 
-<Baseof>
-	<section>
-		<ul>
+<Baseof PageTitle = "tin tức việt hàn" PageDescription = "cập nhật thông tin mới nhất về các sản phẩm thương hiệu việt hàn">
+	<section class="bg-blue-200 px-2 py-4 lg:px-0 lg:py-12">
+		<ul class="max-w-screen-md mx-auto">
 			{posts.map((post) => (
-				<li class="flex">
-					<time class="flex-none basis-1/4" datetime={post.frontmatter.pubDate}>
-						{new Date(post.frontmatter.pubDate).toLocaleDateString('vi-vn', {
+				<li class="relative bg-white p-4 rounded-md overflow-hidden my-2">
+					<time class="absolute top-0 right-4 bg-blue-500 text-sm text-white z-10 py-1 px-3" datetime={post.frontmatter.date}>
+						{new Date(post.frontmatter.date).toLocaleDateString('vi-vn', {
 							year: 'numeric',
 							month: 'long',
 							day: '2-digit',
 						})}
 					</time>
-					<a href={post.url}>{post.frontmatter.title}</a>
+
+					<a href={post.url} class="flex flex-col">
+						<div class="aspect-auto lg:aspect-[3/1] overflow-hidden">
+							<Image class="w-full h-full object-cover" src={post.frontmatter.post_image} width={800} aspectRatio="16:9" format={"webp"} alt={post.frontmatter.description} />
+						</div>
+						<h2 class="font-bold text-lg xl:text-2xl leading-tight mt-2">{post.frontmatter.title}</h2>
+						<p>{post.frontmatter.description}</p>
+					</a>
 				</li>
 			))}
 		</ul>

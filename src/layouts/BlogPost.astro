@@ -1,46 +1,27 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE } from '../config';
-
-export interface Props {
-	content: {
-		title: string;
-		description: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
-}
+import Baseof from './Baseof.astro';
+import { Image } from '@astrojs/image/components';
 
 const {
-	content: { title, description, heroImage },
+	content: { title, description, post_image },
 } = Astro.props;
 
 
 ---
 
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
+<Baseof PageTitle={title} PageDescription={description}>
+	<article class="bg-white">
+		<header class="relative py-12 lg:py-24 flex flex-col items-center justify-center bg-black">
+			<Image class="absolute inset-0 w-full h-full object-cover opacity-50" src={post_image} width={500} aspectRatio={"2:1"} alt={description} />
+			<h1 class="font-bold text-center text-white drop-shadow-md text-3xl z-10 max-w-lg">{title}</h1>
+			<div class="my-8 z-10">
+				<a class="text-white" href="/">về trang chủ</a> |
+				<a class="text-white" href="/blog">về trang tin tức</a>
+			</div>
+		</header>
 
-	<body>
-		<div class="lg:container mx-auto p-2 md:p-4 lg:p-8 ">
-			<Header title={SITE_TITLE} />
-
-			<main>
-				<article>
-					<img src={heroImage} width="500" height="500" alt="" />
-					<h1 class="font-bold text-3xl">{title}</h1>
-					<hr/>
-					<slot />
-				</article>
-			</main>
-			
-			<Footer />
+		<div class="relative z-20 blog-post bg-white mt-0 lg:-mt-24">
+			<slot />
 		</div>
-	</body>
-</html>
+	</article>
+</Baseof>				
