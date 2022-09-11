@@ -4,13 +4,15 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 import Sticky from '../components/Sticky.astro';
+
+const { PageTitle = "xốp việt hàn", PageDescription = "nhà sản xuất xốp hơi, xốp pe, tấm cách nhiệt hàng đầu Việt Nam" } = Astro.props;
 ---
 
 
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={PageTitle} description={PageDescription} />
 	</head>
 
 	<body>

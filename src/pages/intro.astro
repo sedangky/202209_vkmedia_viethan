@@ -1,10 +1,11 @@
 ---
 import Baseof from "../layouts/Baseof.astro";
-// import { Image } from "@astrojs/image/components";
+import Vs100 from "../components/Vs100.astro";
 import { Picture } from '@astrojs/image/components';
+// import { Image } from "@astrojs/image/components";
+
 const imageUrl =
   "https://res.cloudinary.com/khongdangky/image/upload/viethan/sanxuat_u7dpxt.jpg";
-import Vs100 from "../components/Vs100.astro";
 
 const ls = [
   { text: "Công ty đã có kinh nghiệm nhiều năm trong lĩnh vực sản xuất." },
@@ -35,7 +36,7 @@ const nm = [
 ]
 ---
 
-<Baseof>
+<Baseof PageTitle = "giới thiệu việt hàn">
   <section class="p-8 md:p-12 bg-white">
     <div class="max-w-screen-md mx-auto text-center">
       <p class="my-8 text:lg md:text-xl">

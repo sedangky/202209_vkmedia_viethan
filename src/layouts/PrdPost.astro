@@ -1,4 +1,5 @@
 ---
+import Baseof from './Baseof.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -26,51 +27,35 @@ const {
 
 ---
 
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
-
-	<body>
-		<div class="lg:container mx-auto p-2 md:p-4 lg:p-8 ">
-			<Header title={SITE_TITLE} />
-
-			<main>
-				<article>
-					<div class="grid grid-cols-1 sm:grid-cols-2">
-						<img class="w-full h-full object-cover" src={image_url} width="500" height="500" alt="" />
-						<div class="sm:pt-4 bg-blue-200 p-4">
-							<div class="flex justify-between">
-								<div class="font-bold text-2xl text-red-700">{prd_code}</div>
-								<div class="bg-black text-white uppercase btn btn-sm"><a href="/products">back</a></div>
-							</div>
-							<h2 class="font-bold text-2xl lg:text-3xl">{title}</h2>
+<Baseof PageTitle = {title} PageDescription = {description}>
+	<article>
+		<div class="grid grid-cols-1 sm:grid-cols-2">
+			<img class="w-full h-full object-cover" src={image_url} width="500" height="500" alt="" />
+			<div class="sm:pt-4 bg-blue-200 p-4">
+				<div class="flex justify-between">
+					<div class="font-bold text-2xl text-red-700">{prd_code}</div>
+					<div class="bg-black text-white uppercase btn btn-sm"><a href="/products">back</a></div>
+				</div>
+				<h2 class="font-bold text-2xl lg:text-3xl">{title}</h2>
 
 
-							<div class="my-4 lg:my-8 grid grid-cols-3 shadow-lg">
-								<div class="col-span-1 bg-white/30 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">công dụng</div>
-								<div class="col-span-2 bg-white/20 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">{prd_use}</div>
+				<div class="my-4 lg:my-8 grid grid-cols-3 shadow-lg">
+					<div class="col-span-1 bg-white/30 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">công dụng</div>
+					<div class="col-span-2 bg-white/20 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">{prd_use}</div>
 
-								<div class="col-span-1 bg-white/30 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">kích thước:</div>
-								<div class="col-span-2 bg-white/20 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">{prd_size}</div>
+					<div class="col-span-1 bg-white/30 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">kích thước:</div>
+					<div class="col-span-2 bg-white/20 p-2 lg:p-4 border border-x-0 border-t-0 border-b-white/50">{prd_size}</div>
 
-								<div class="col-span-1 bg-white/30 p-2 lg:p-4">trọng lượng:</div>
-								<div class="col-span-2 bg-white/20 p-2 lg:p-4">{prd_weight}</div>
+					<div class="col-span-1 bg-white/30 p-2 lg:p-4">trọng lượng:</div>
+					<div class="col-span-2 bg-white/20 p-2 lg:p-4">{prd_weight}</div>
 
-							</div>
-						</div>
-					</div>
-					<section class="bg-yellow-100 p-4">
-						<div class="md-content">
-							<slot />
-						</div>
-					</section>
-				</article>
-			</main>
-			
-			<Footer />
+				</div>
+			</div>
 		</div>
-		<Sticky />
-	</body>
-</html>
+		<section class="bg-yellow-100 p-4">
+			<div class="md-content">
+				<slot />
+			</div>
+		</section>
+	</article>
+</Baseof>
