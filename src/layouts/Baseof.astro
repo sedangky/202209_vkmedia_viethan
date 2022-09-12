@@ -5,14 +5,14 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 import Sticky from '../components/Sticky.astro';
 
-const { PageTitle = "xốp việt hàn", PageDescription = "nhà sản xuất xốp hơi, xốp pe, tấm cách nhiệt hàng đầu Việt Nam" } = Astro.props;
+const { PageTitle = "xốp việt hàn", PageDescription = "nhà sản xuất xốp hơi, xốp pe, tấm cách nhiệt hàng đầu Việt Nam", PageImg = "/placeholder-social.jpg" } = Astro.props;
 ---
 
 
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
-		<BaseHead title={PageTitle} description={PageDescription} />
+		<BaseHead title={PageTitle} description={PageDescription} image={PageImg} />
 	</head>
 
 	<body>
