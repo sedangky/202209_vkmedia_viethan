@@ -14,12 +14,13 @@ export interface Props {
 		prd_use?:string;
 		prd_size?:string;
 		prd_weight?:string;
+		prd_price?:string;
 		more_imgs?:any;
 	};
 }
 
 const {
-	content: { title, description, image_url, prd_code, prd_use, prd_size, prd_weight, more_imgs },
+	content: { title, description, image_url, prd_code, prd_use, prd_size, prd_weight, prd_price, more_imgs },
 } = Astro.props;
 
 
@@ -47,7 +48,9 @@ const {
 
 					<div class="col-span-1 bg-white/30 p-2 lg:p-4">trọng lượng:</div>
 					<div class="col-span-2 bg-white/20 p-2 lg:p-4">{prd_weight}</div>
-
+					
+					<div class="col-span-1 bg-white/30 p-2 lg:p-4">giá tham khảo:</div>
+					<div class="col-span-2 bg-white/20 p-2 lg:p-4 font-bold">{prd_price}.000VND</div>
 				</div>
 
 				<div class="flex items-center p-2 lg:p-4 border-2 border-red-800">

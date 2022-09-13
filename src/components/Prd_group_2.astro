@@ -16,7 +16,10 @@ const prds = await Astro.glob('../pages/product/xop-pe/*.md');
                     <div class="bg-gray-300 w-full aspect-square overflow-hidden">
                         <img class="w-full h-full object-cover transition-all duration-500 group-hover:scale-125" src={p.frontmatter.image_url} width="500" height="500" alt={p.frontmatter.image_alt} />
                     </div>
-                    <div class="uppercase text-center py-1 font-bold text-xs sm:text-sm">{p.frontmatter.prd_code}</div>
+                    <div class="flex items-center justify-between py-1">
+                        <div class="uppercase font-bold text-xs sm:text-sm">{p.frontmatter.prd_code}</div>
+                        <div class="uppercase font-bold text-xs sm:text-sm text-red-700">{p.frontmatter.prd_price}.000đ</div>
+                    </div>                    
                 </div>
             </a>
     
