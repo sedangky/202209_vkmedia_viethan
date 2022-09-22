@@ -24,7 +24,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 					</time>
 
 					<a href={post.url} class="flex flex-col">
-						<div class="aspect-square sm:aspect-auto lg:aspect-[3/1] 2xl:aspect-video overflow-hidden">
+						<div class="w-full aspect-auto overflow-hidden">
 							<Image class="w-full h-full object-cover" src={post.frontmatter.post_image} width={800} aspectRatio="16:9" format={"webp"} alt={post.frontmatter.description} />
 						</div>
 						<h2 class="font-bold text-lg xl:text-2xl leading-tight mt-2">{post.frontmatter.title}</h2>
