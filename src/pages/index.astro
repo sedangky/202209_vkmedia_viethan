@@ -10,11 +10,23 @@ import Poster from '../components/Poster.astro';
 import data from '../data/home.json';
 
 import SlideshowClient from '../components/Slideshow_client';
+import { Picture } from '@astrojs/image/components';
 
-
+const hero = "https://res.cloudinary.com/khongdangky/image/upload/v1671679159/viethan/t12/image_45_w9pjfx.jpg";
 ---
 
 <Baseof>
+	<div class="aspect-auto">
+		<Picture
+        src={hero}
+        widths={[400,600,900,1200,1920]}
+        aspectRatio={2 / 1}
+        alt="viethan adv"
+        sizes="(min-width: 1200px) 100vw, 1200px"
+        format="webp"
+		loading="eager"
+      />
+	</div>
 	<Poster sp={data.sp1} tem={"/tem_xophoi.svg"}/>
 	<SlideshowMain client:load />
 	<Poster sp={data.sp2} tem={"/tem_pefoam.svg"} reverse={true}/>
